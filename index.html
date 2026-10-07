@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VentBox: Type &amp; Destroy | Private venting app for Android</title>
+    <meta name="description"
+        content="VentBox is a private space to type what's on your mind, then watch it shred, burn or vanish. No account, no cloud. Free on Google Play.">
+    <link rel="canonical" href="https://ab5ullah.github.io/ventbox-legal/">
+    <meta name="theme-color" content="#17122B">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="VentBox">
+    <meta property="og:title" content="VentBox: Type it. Destroy it. Let it go.">
+    <meta property="og:description"
+        content="A private space to type what you can't say out loud, then watch it disappear. Free on Google Play.">
+    <meta property="og:url" content="https://ab5ullah.github.io/ventbox-legal/">
+    <meta property="og:image" content="https://ab5ullah.github.io/ventbox-legal/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"VentBox","alternateName":["Vent Box","VentBox: Type & Destroy"],"applicationCategory":"LifestyleApplication","operatingSystem":"Android","description":"A private space to type what's on your mind, then watch it shred, burn or vanish. No account. Your text is never saved or sent anywhere.","installUrl":"https://play.google.com/store/apps/details?id=com.ventbox.app","image":"https://ab5ullah.github.io/ventbox-legal/assets/og-image.png","author":{"@type":"Person","name":"Muhammad Abdullah"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+    <style>
+        :root {
+            --bg: #17122B;
+            --tx: #F5F3FC;
+            --lv: #B9B0E3;
+            --mu: #8F87B8;
+            --rd: #E8443A;
+            --s1: #1F1938;
+            --s2: #2A2248;
+            --ln: rgba(185, 176, 227, .16);
+            color-scheme: dark
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--tx);
+            font: 400 17px/1.65 Poppins, system-ui, -apple-system, sans-serif;
+            -webkit-font-smoothing: antialiased
+        }
+
+        a {
+            color: inherit
+        }
+
+        .w {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 24px
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: 600;
+            line-height: 1.12;
+            letter-spacing: -.02em;
+            margin: 0
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 54px;
+            padding: 0 28px;
+            border-radius: 27px;
+            background: var(--rd);
+            color: var(--bg);
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            transition: transform .15s
+        }
+
+        .btn:hover {
+            transform: translateY(-2px)
+        }
+
+        .btn.sm {
+            min-height: 42px;
+            padding: 0 20px;
+            font-size: 14px;
+            border-radius: 21px
+        }
+
+        a:focus-visible,
+        summary:focus-visible {
+            outline: 2px solid var(--lv);
+            outline-offset: 3px;
+            border-radius: 6px
+        }
+
+        header .w {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 76px
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 20px;
+            text-decoration: none;
+            letter-spacing: -.02em
+        }
+
+        .brand svg {
+            width: 34px;
+            height: 34px
+        }
+
+        .brand b {
+            color: var(--rd);
+            font-weight: 700
+        }
+
+        .hero {
+            background: repeating-linear-gradient(180deg, transparent 0 22px, rgba(185, 176, 227, .04) 22px 24px);
+            padding: 48px 0 88px
+        }
+
+        .hero .w {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 56px;
+            align-items: center
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 6vw, 66px);
+            margin-bottom: 22px
+        }
+
+        .lead {
+            font-size: 19px;
+            color: var(--lv);
+            max-width: 34em;
+            margin: 0 0 32px
+        }
+
+        .cta {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap
+        }
+
+        .cta a.l {
+            color: var(--lv);
+            font-weight: 500;
+            text-underline-offset: 4px
+        }
+
+        .note {
+            color: var(--mu);
+            font-size: 14px;
+            margin: 18px 0 0
+        }
+
+        .ph {
+            border: 6px solid #08050F;
+            border-radius: 38px;
+            overflow: hidden;
+            background: #08050F;
+            box-shadow: 0 0 0 1px var(--ln);
+            max-width: 310px;
+            margin: 0 auto
+        }
+
+        .ph img {
+            display: block;
+            width: 100%;
+            height: auto
+        }
+
+        section {
+            padding: 80px 0
+        }
+
+        h2 {
+            font-size: clamp(30px, 4vw, 42px);
+            margin-bottom: 14px
+        }
+
+        .sub {
+            color: var(--lv);
+            max-width: 38em;
+            margin: 0 0 44px
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin: 0;
+            padding: 0;
+            list-style: none
+        }
+
+        .steps i {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--lv);
+            border-radius: 50%;
+            color: var(--lv);
+            font-style: normal;
+            font-weight: 600;
+            margin-bottom: 18px
+        }
+
+        .steps h3 {
+            font-size: 21px;
+            margin-bottom: 8px
+        }
+
+        .steps p {
+            margin: 0;
+            color: var(--lv);
+            font-size: 16px
+        }
+
+        .alt {
+            background: var(--s1);
+            border-block: 1px solid var(--ln)
+        }
+
+        .fx {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 0 0 20px;
+            padding: 0;
+            list-style: none
+        }
+
+        .fx li {
+            padding: 9px 20px;
+            border: 1px solid var(--ln);
+            border-radius: 24px;
+            background: var(--s2);
+            font-weight: 500
+        }
+
+        .fx small {
+            color: var(--mu);
+            font-weight: 400;
+            margin-left: 6px
+        }
+
+        .two {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: center
+        }
+
+        .shots {
+            display: flex;
+            gap: 24px;
+            justify-content: center
+        }
+
+        .shots .ph {
+            max-width: 260px;
+            margin: 0
+        }
+
+        .shots figure {
+            margin: 0
+        }
+
+        .shots figcaption {
+            margin: 14px auto 0;
+            max-width: 260px;
+            color: var(--mu);
+            font-size: 14px;
+            text-align: center
+        }
+
+        .pri {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 8px
+        }
+
+        .pri h3 {
+            font-size: 19px;
+            margin-bottom: 6px
+        }
+
+        .pri p {
+            margin: 0;
+            color: var(--lv);
+            font-size: 15.5px
+        }
+
+        .fine {
+            color: var(--mu);
+            font-size: 14px;
+            margin-top: 32px;
+            max-width: 46em
+        }
+
+        details {
+            border-top: 1px solid var(--ln);
+            padding: 20px 0
+        }
+
+        details:last-of-type {
+            border-bottom: 1px solid var(--ln)
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 18px;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            gap: 16px
+        }
+
+        summary::-webkit-details-marker {
+            display: none
+        }
+
+        summary:after {
+            content: "+";
+            color: var(--lv);
+            font-size: 24px;
+            line-height: 1
+        }
+
+        details[open] summary:after {
+            content: "\2212"
+        }
+
+        details p {
+            margin: 12px 0 0;
+            color: var(--lv);
+            max-width: 42em
+        }
+
+        .final {
+            text-align: center;
+            padding: 96px 0
+        }
+
+        .final h2 {
+            margin-bottom: 28px
+        }
+
+        footer {
+            border-top: 1px solid var(--ln);
+            padding: 36px 0 48px;
+            color: var(--mu);
+            font-size: 14px
+        }
+
+        footer .w {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 32px;
+            justify-content: space-between
+        }
+
+        footer nav {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap
+        }
+
+        footer p {
+            margin: 0;
+            max-width: 44em
+        }
+
+        footer .d {
+            width: 100%;
+            font-size: 13px
+        }
+
+        @media(max-width:820px) {
+            .hero {
+                padding: 24px 0 64px
+            }
+
+            .hero .w,
+            .two {
+                grid-template-columns: 1fr;
+                gap: 44px
+            }
+
+            .steps,
+            .pri {
+                grid-template-columns: 1fr;
+                gap: 32px
+            }
+
+            section {
+                padding: 60px 0
+            }
+
+            .shots {
+                flex-wrap: wrap
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            html {
+                scroll-behavior: auto
+            }
+
+            .btn {
+                transition: none
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="mk" viewBox="0 0 64 64">
+            <rect width="64" height="64" rx="16" fill="#221B3E" />
+            <rect x="19" y="9" width="26" height="22" rx="3" fill="#F5F3FC" />
+            <path d="M24 15h16M24 20h12M24 25h14" stroke="#B9B0E3" stroke-width="2.4" stroke-linecap="round" />
+            <rect x="13" y="31" width="38" height="7" rx="3" fill="#E8443A" />
+            <path d="M19 41v7M26 41v10M33 41v6M40 41v9M46 41v6" stroke="#B9B0E3" stroke-width="3.2"
+                stroke-linecap="round" />
+        </symbol>
+    </svg>
+
+    <header>
+        <div class="w"><a class="brand" href="./" aria-label="VentBox home"><svg aria-hidden="true">
+                    <use href="#mk" />
+                </svg><span>Vent<b>Box</b></span></a>
+            <a class="btn sm" href="https://play.google.com/store/apps/details?id=com.ventbox.app&amp;hl=en">Get the
+                app</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="hero">
+            <div class="w">
+                <div>
+                    <h1>Type it. Destroy it. Let it go.</h1>
+                    <p class="lead">VentBox is a private app for the things you can't say out loud. Write them down,
+                        then watch them disappear. No account. What you write is never saved or sent anywhere.</p>
+                    <div class="cta"><a class="btn"
+                            href="https://play.google.com/store/apps/details?id=com.ventbox.app&amp;hl=en">Get it on
+                            Google Play</a><a class="l" href="#how">See how it works</a></div>
+                    <p class="note">Free for Android. No sign-up.</p>
+                </div>
+                <div class="ph"><img src="assets/shot-home.jpg" width="540" height="1130"
+                        alt="VentBox writing screen with a mood picker, a large text area and a Hold to let go button"
+                        fetchpriority="high"></div>
+            </div>
+        </div>
+
+        <section id="how">
+            <div class="w">
+                <h2>How VentBox works</h2>
+                <p class="sub">Three steps, about a minute. Nothing to set up.</p>
+                <ol class="steps">
+                    <li><i>1</i>
+                        <h3>Write it</h3>
+                        <p>Pick how you feel, then type whatever is on your mind. Messy is fine. Nobody reads it.</p>
+                    </li>
+                    <li><i>2</i>
+                        <h3>Hold to let go</h3>
+                        <p>Press and hold the button and choose how it goes: shredded, burned, swallowed by a blackhole
+                            and more.</p>
+                    </li>
+                    <li><i>3</i>
+                        <h3>It's gone</h3>
+                        <p>Your words vanish from the screen and from the app. Take a breath and put your phone down.
+                        </p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="alt">
+            <div class="w two">
+                <div>
+                    <h2>Five ways to let go</h2>
+                    <p class="sub" style="margin-bottom:24px">Each one comes with its own visuals, sound and haptic
+                        feedback.</p>
+                    <ul class="fx">
+                        <li>Shred</li>
+                        <li>Burn</li>
+                        <li>Ocean<small>Pro</small></li>
+                        <li>Shatter<small>Pro</small></li>
+                        <li>Blackhole<small>Pro</small></li>
+                    </ul>
+                    <p class="fine" style="margin-top:0">VentBox is free to use. Pro adds more effects, themes and mood
+                        insights.</p>
+                </div>
+                <div class="shots">
+                    <figure>
+                        <div class="ph"><img src="assets/shot-shred.jpg" width="540" height="1130"
+                                alt="The shredder effect feeding a typed note into a shredder" loading="lazy"></div>
+                        <figcaption>The shredder effect</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="ph"><img src="assets/shot-insights.jpg" width="540" height="1130"
+                                alt="Mood insights screen counting vents by feeling" loading="lazy"></div>
+                        <figcaption>Mood insights, counted on your phone</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="w">
+                <h2>Private by design</h2>
+                <p class="sub">VentBox only works if you can be honest, so it keeps nothing it doesn't need.</p>
+                <div class="pri">
+                    <div>
+                        <h3>Nothing is saved</h3>
+                        <p>What you write is never stored or sent to a server. Once you destroy it, it's gone.</p>
+                    </div>
+                    <div>
+                        <h3>No account</h3>
+                        <p>No email, no password, no profile. Open the app and start typing.</p>
+                    </div>
+                    <div>
+                        <h3>Stays on your phone</h3>
+                        <p>Mood counts and history are kept on your device only.</p>
+                    </div>
+                </div>
+                <p class="fine">Purchases are handled by Google Play. Read the full <a
+                        href="privacy-policy.html">privacy policy</a>.</p>
+            </div>
+        </section>
+
+        <section class="alt">
+            <div class="w">
+                <h2>Questions</h2>
+                <p class="sub">The short answers.</p>
+                <details>
+                    <summary>What is VentBox?</summary>
+                    <p>VentBox (also written Vent Box) is an Android app where you type out frustrations or heavy
+                        thoughts, then destroy them with an animation. It's a private place to get things out of your
+                        head, with nobody watching and nothing kept.</p>
+                </details>
+                <details>
+                    <summary>Is VentBox free?</summary>
+                    <p>Yes. You can vent as much as you like for free. VentBox Pro is optional and unlocks more
+                        destruction effects, themes and mood insights.</p>
+                </details>
+                <details>
+                    <summary>Does VentBox save what I write?</summary>
+                    <p>No. Your text is never stored or sent to any server, and it's gone as soon as you destroy it.</p>
+                </details>
+                <details>
+                    <summary>Is it on iPhone?</summary>
+                    <p>Not yet. VentBox is currently available on Google Play for Android.</p>
+                </details>
+                <details>
+                    <summary>Is VentBox therapy?</summary>
+                    <p>No. VentBox isn't therapy or a medical service. It's a simple tool for letting things out. If
+                        you're struggling, please talk to someone you trust or a professional.</p>
+                </details>
+            </div>
+        </section>
+
+        <div class="w final">
+            <h2>Say it. Shred it. Move on.</h2><a class="btn"
+                href="https://play.google.com/store/apps/details?id=com.ventbox.app&amp;hl=en">Get VentBox on Google
+                Play</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="w">
+            <p>VentBox is made by DinoNova Lab.</p>
+            <nav aria-label="Footer"><a href="privacy-policy.html">Privacy policy</a><a
+                    href="mailto:dinonovalab@gmail.com">Contact</a><a
+                    href="https://play.google.com/store/apps/details?id=com.ventbox.app&amp;hl=en">Google Play</a></nav>
+            <p class="d">VentBox is not therapy or a medical service. If you're in crisis or in danger, contact your
+                local emergency number or a crisis line.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ab5ullah.github.io/ventbox-legal/sitemap.xml
